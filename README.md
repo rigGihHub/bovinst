@@ -1,17 +1,18 @@
-# Bovinst v0.3.0 – Nybörjarguiden
+# Bovinst v0.22.0 – Explicita svar
 
-Den här versionen gör nybörjarperspektivet till en grundregel i hela appen.
+Förberedd medan användaren är bortrest. Ingen push eller deploy nu.
 
-## Nytt
-- användaren behöver inte välja skattekategori själv
-- vanliga frågor översätts internt till skatteregler
-- varje svårt begrepp förklaras när det behövs
-- skatteord döljs bakom "Visa skatteordet – bara om du vill"
-- 5 000-kronorsregeln förklaras med vardagsexempel
-- resultat använder "har bra stöd", "kan vara möjligt" och "behöver kontrolleras"
-- saknade kvitton hanteras utan att kostnaden raderas
-- ingen slutlig skatt visas innan hela K5/K6-logiken är byggd
+Nytt:
+- orörda frågor räknas inte längre som besvarade
+- "Vet ej" räknas bara när användaren själv har valt det
+- Avdragsminnet börjar med "Välj ett svar" i stället för automatiskt Vet ej
+- tidslinjen börjar med "Välj ett svar" i stället för automatiskt Vet ej
+- Bostadskontrollen kan inte längre välja villa eller svara på kontrollfrågor åt användaren
+- saknade bostadskontrollsvar ger "behöver kontrolleras", aldrig falskt OK
+- adaptiva följdfrågor får också ett neutralt startläge
+- projekt auto-skapa först när minst en verklig följduppgift har lämnats
+- explicit Vet ej bevaras som legitimt, genomgånget men osäkert svar
+- 81 automatiska tester
 
-## Starta
-pip install -r requirements.txt
-streamlit run app.py
+Princip:
+Bovinst får aldrig förväxla ett standardvärde i gränssnittet med ett faktiskt användarsvar.
